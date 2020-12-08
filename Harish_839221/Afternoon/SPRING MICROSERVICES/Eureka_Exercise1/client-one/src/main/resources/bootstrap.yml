@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: client-one
+  cloud:
+     config:
+       uri: http://localhost:8888/
+  profiles:
+     active: developer    
+    
+       
+    
