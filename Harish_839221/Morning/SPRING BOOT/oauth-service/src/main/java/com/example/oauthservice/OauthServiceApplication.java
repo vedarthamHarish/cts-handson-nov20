@@ -22,14 +22,14 @@ public class OauthServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(OauthServiceApplication.class, args);
 	}
-	
-	@RequestMapping(value="/user", produces = MediaType.APPLICATION_JSON_VALUE )
+
+	@RequestMapping(value = "/user", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Map<String, Object> userInfo(OAuth2Authentication oauth2) {
 		Map<String, Object> userinformation = new HashMap<>();
 		userinformation.put("user", oauth2.getUserAuthentication().getPrincipal());
-		userinformation.put("authorities", AuthorityUtils.authorityListToSet(oauth2.getUserAuthentication().getAuthorities()));
+		userinformation.put("authorities",
+				AuthorityUtils.authorityListToSet(oauth2.getUserAuthentication().getAuthorities()));
 		return userinformation;
-		
 	}
 
 }

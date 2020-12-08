@@ -1,0 +1,18 @@
+server:
+  port: 8081
+  
+security:
+  oauth2:
+    resource:
+      token-info-uri: http://localhost:8081/oauth/token
+    client:
+      client-id: my-client
+      client-secret: secretpassword
+      user-authorization-uri: http://localhost:8081/user
+      authentication-scheme: form
+      scope:
+      - webclient
+      grant-type: password  
+
+          
+      

@@ -8,8 +8,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 @Configuration
-public class UserSecurityConfigurer extends WebSecurityConfigurerAdapter{
-	
+public class UserSecurityConfigurer extends WebSecurityConfigurerAdapter  {
+
+	// provides user credentials & roles
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication()
@@ -34,4 +35,6 @@ public class UserSecurityConfigurer extends WebSecurityConfigurerAdapter{
 		return super.userDetailsServiceBean();
 	}
 
+	
+	
 }
